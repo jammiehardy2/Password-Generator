@@ -13,16 +13,17 @@ body,
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #f9fbfd;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: plum;
 }
 
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 70px;
 }
-
 header {
   text-align: center;
   padding: 20px;
@@ -90,8 +91,9 @@ header {
 
 button[disabled] {
   cursor: default;
-  background: #c0c7cf;
+  background: blueviolet;
 }
+
 
 .float-right {
   float: right;
