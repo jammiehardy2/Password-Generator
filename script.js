@@ -6,14 +6,13 @@ var includeUpperCaseCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L
 var includeLowerCaseCharacters =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var includeSpecialCharacters=["!","@","#","%","^","&","*","(",")","~","?","/"];
 var userChoice=[];
+var finalPassword=[];
 //My arrays
 
 
 // Write password to the #password input
 function myFunctionPassword(){
-    var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+  
   
   
   //var passwordCreated=[];
@@ -25,44 +24,57 @@ function myFunctionPassword(){
 
  
 //Choosing the password inputs
-var passwordLength =InputEvent("Password must be between 8 and 128 characters long")
-    if (passwordLength) 
-    userChoice = userChoice(passwordLength < -128 && passwordLength >-8);  
-}
+var passwordLength =prompt("Enter a password length between 8 and 128")
+    //if (passwordLength) 
+   // userChoice = userChoice(passwordLength < 128 && passwordLength >8);  
+//}
 var userChoiceNumber =confirm("do you want numbers")
-    if (userChoiceNumber) 
+    if (userChoiceNumber){ 
     userChoice = userChoice.concat(includeNumbers);
+    finalPassword.concat(randomCharacter(includeNumbers));
+  }
 
 //console.log (includeNumbers)
 var userChoiceUppercase =confirm("do you want Uppercase Characters") 
     if (userChoiceUppercase) {
     userChoice = userChoice.concat(includeUpperCaseCharacters);
-
+    finalPassword.concat(randomCharacter(includeUpperCaseCharacters));
 //console.log (includeUpperCaseCharacters)
     }
 var userChoiceLowercase =confirm("do you want Lowercase Characters")
-    if (userChoiceLowercase)
+    if (userChoiceLowercase){
     userChoice = userChoice.concat(includeLowerCaseCharacters);
-    
+    finalPassword.concat(randomCharacter(includeLowerCaseCharacters));
+    }  
 //console.log (includeLowerCaseCharacters)
   
   var userChoiceSpecialCharacters =confirm("do you want Special Characters")
-    if (userChoiceSpecialCharacters)
+    if (userChoiceSpecialCharacters){
     userChoice = userChoice.concat(includeSpecialCharacters);
+    finalPassword.concat(randomCharacter(includeSpecialCharacters));
+    }
+    
+
+    for (var i =finalPassword.length+1; i < passwordLength; i++){
+      finalPassword.concat(randomCharacter(userChoice));  
+    }
+    return ()
+  }
+
+  function randomCharacter(characterarray){
+    var charIndex= math.floor(math.random() * characterarray.length);
+    return characterarray[charIndex]
+  }
 
     function mygeneratePassword(){
       var passwordText = document.querySelector("#mygeneratepasword");    
-    
+      var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+    }
 //console.log(includeSpecialCharacters);
     
 
-  var userChoiceFinal = [];
-    for (var i =0; i <- passwordLength; i++){
-    var password = math.floor(math.random() * userChoice.passwordLength);
-    userChoice=userChoice.concat;
-  
-    
-  console.log(userChoice.join(""));
 //Generate password?
 
 
